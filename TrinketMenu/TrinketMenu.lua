@@ -1,4 +1,3 @@
-
 --[[ TrinketMenu 3.41 ]]--
 TrinketMenu = {}
 
@@ -261,10 +260,10 @@ function TrinketMenu.Initialize()
 	TrinketMenu.CreateTimer("TooltipUpdate",TrinketMenu.TooltipUpdate,1,1)
 	TrinketMenu.CreateTimer("CooldownUpdate",TrinketMenu.CooldownUpdate,1,1)
 
-	TrinketMenu.oldUseInventoryItem = UseInventoryItem
-	UseInventoryItem = TrinketMenu.newUseInventoryItem
-	TrinketMenu.oldUseAction = UseAction
-	UseAction = TrinketMenu.newUseAction
+	--TrinketMenu.oldUseInventoryItem = UseInventoryItem
+	--UseInventoryItem = TrinketMenu.newUseInventoryItem
+	--TrinketMenu.oldUseAction = UseAction
+	--UseAction = TrinketMenu.newUseAction
 
 	TrinketMenu.InitOptions()
 
@@ -427,33 +426,33 @@ function TrinketMenu.SlashHandler(msg)
 			TrinketMenu.ScaleFrame(mainscale)
 		end
 		if not tonumber(menuscale) and not tonumber(mainscale) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00TrinketMenu scale:")
-			DEFAULT_CHAT_FRAME:AddMessage("/trinket scale main (number) : set exact main scale")
-			DEFAULT_CHAT_FRAME:AddMessage("/trinket scale menu (number) : set exact menu scale")
-			DEFAULT_CHAT_FRAME:AddMessage("ie, /trinket scale menu 0.85")
-			DEFAULT_CHAT_FRAME:AddMessage("Note: You can drag the lower-right corner of either window to scale.  This slash command is for those who want to set an exact scale.")
+			DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD_SCALES)
+			DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD_SCALE1)
+			DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD_SCALE2)
+			DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD_SCALE3)
+			DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD_SCALE4)
 		end
 		TrinketMenu.FrameToScale = nil
 		TrinketMenuPerOptions.MainScale = TrinketMenu_MainFrame:GetScale()
 		TrinketMenuPerOptions.MenuScale = TrinketMenu_MenuFrame:GetScale()
 	elseif string.find(msg,"load") then
-		DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00TrinketMenu load:")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket load (top|bottom) profilename\nie: /trinket load bottom PvP")
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_ADDON_LOAD)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD_LOAD)
 	else
-		DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00TrinketMenu useage:")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket or /trinketmenu : toggle the window")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket reset : reset all settings")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket opt : summon options window")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket lock|unlock : toggles window lock")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket scale main|menu (number) : sets an exact scale")
-		DEFAULT_CHAT_FRAME:AddMessage("/trinket load top|bottom profilename : loads a profile to top or bottom trinket")
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMDS)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD1)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD2)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD3)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD4)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD5)
+		DEFAULT_CHAT_FRAME:AddMessage(TRINKETMENU_CMD6)
 	end
 end
 
 function TrinketMenu.ResetSettings()
 	StaticPopupDialogs["TRINKETMENURESET"] = {
-		text = "Are you sure you want to reset TrinketMenu to default state and reload the UI?",
-		button1 = "Yes", button2 = "No", showAlert=1, timeout = 0, whileDead = 1,
+		text = TRINKETMENU_RESET,
+		button1 = TRINKETMENU_YES, button2 = TRINKETMENU_NO, showAlert=1, timeout = 0, whileDead = 1,
 		OnAccept = function() TrinketMenuOptions=nil TrinketMenuPerOptions=nil TrinketMenuQueue=nil ReloadUI() end,
 	}
 	StaticPopup_Show("TRINKETMENURESET")
@@ -757,14 +756,13 @@ function TrinketMenu.ReflectTrinketUse(slot)
 end
 
 function TrinketMenu.newUseInventoryItem(slot)
-	TrinketMenu.oldUseInventoryItem(slot)
 	if slot==13 or slot==14 and not MerchantFrame:IsVisible() then
 		TrinketMenu.ReflectTrinketUse(slot)
 	end
+	TrinketMenu.oldUseInventoryItem(slot)
 end
 
 function TrinketMenu.newUseAction(slot,cursor,self)
-	TrinketMenu.oldUseAction(slot,cursor,self)
 	if IsEquippedAction(slot) then
 		TrinketMenu_TooltipScan:SetAction(slot)
 		local _,trinket0 = TrinketMenu.ItemInfo(13)
@@ -775,6 +773,7 @@ function TrinketMenu.newUseAction(slot,cursor,self)
 			TrinketMenu.ReflectTrinketUse(14)
 		end
 	end
+	TrinketMenu.oldUseAction(slot,cursor,self)
 end
 
 --[[ Tooltips ]]
@@ -945,7 +944,7 @@ function TrinketMenu.UpdateCombatQueue()
 				icon:Show()
 			end
 		elseif TrinketMenu.QueueInit and TrinketMenuQueue and TrinketMenuQueue.Enabled[which] then
-			icon:SetTexture("Interface\\AddOns\\TrinketMenu\\TrinketMenu-Gear")
+			icon:SetTexture("Interface\\AddOns\\TrinketMenu\\Images\\TrinketMenu-Gear")
 			icon:Show()
 		end
 	end

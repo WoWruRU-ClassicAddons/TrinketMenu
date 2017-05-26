@@ -1,9 +1,11 @@
 ## Interface: 11200
-## Title: TrinketMenu
+## Title: TrinketMenu - Fix
 ## Author: Gello
-## Notes: AddOn to manage trinkets
+## Notes: AddOn to manage trinkets, fix by Ogrisch
+## Notes-ruRU: Аддон для управления аксессуарами
 ## SavedVariables: TrinketMenuOptions
 ## SavedVariablesPerCharacter: TrinketMenuPerOptions, TrinketMenuQueue
+
 TrinketMenu.lua
 TrinketMenu.xml
 TrinketMenuOpt.lua
@@ -11,3 +13,5 @@ TrinketMenuOpt.xml
 TrinketMenuQueue.lua
 TrinketMenuQueue.xml
 
+Localization.lua
+Localization.ruRU.lua

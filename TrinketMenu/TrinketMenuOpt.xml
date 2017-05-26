@@ -1,7 +1,11 @@
 <Ui>
+	
+	<Script file="Localization.lua"></Script>
+	<Script file="Localization.ruRU.lua"></Script>
+	
 	<Button name="TrinketMenu_TabTemplate" inherits="UIPanelButtonGrayTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="96" y="28"/>
+			<AbsDimension x="122" y="28"/>
 		</Size>
 		<NormalText inherits="GameFontHighlightSmall"/>
 		<DisabledText inherits="GameFontDisableSmall"/>
@@ -16,7 +20,7 @@
 		<Size>
 			<AbsDimension x="16" y="16"/>
 		</Size>
-		<HighlightTexture file="Interface\AddOns\TrinketMenu\Buttons" alphaMode="ADD">
+		<HighlightTexture file="Interface\AddOns\TrinketMenu\Images\Buttons" alphaMode="ADD">
 			<TexCoords left=".25" right=".375" top="0" bottom=".125"/>
 		</HighlightTexture>
 		<Scripts>
@@ -57,8 +61,8 @@
 		<Anchors>
 			<Anchor point="TOPLEFT"/>
 		</Anchors>
-		<NormalTexture file="Interface\AddOns\TrinketMenu\TrinketMenu-Icon-Up"/>
-		<PushedTexture file="Interface\AddOns\TrinketMenu\TrinketMenu-Icon-Down"/>
+		<NormalTexture file="Interface\AddOns\TrinketMenu\Images\TrinketMenu-Icon-Up"/>
+		<PushedTexture file="Interface\AddOns\TrinketMenu\Images\TrinketMenu-Icon-Down"/>
 		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 		<Scripts>
 			<OnLoad>
@@ -66,7 +70,7 @@
 				this:RegisterForDrag("LeftButton")
 			</OnLoad>
 			<OnEnter>
-				TrinketMenu.OnTooltip("TrinketMenu",(TrinketMenuOptions.DisableToggle=="ON") and "Click: toggle options\nDrag: move icon" or "Left click: toggle trinkets\nRight click: toggle options\nDrag: move icon")
+				TrinketMenu.OnTooltip("TrinketMenu",(TrinketMenuOptions.DisableToggle=="ON") and TRINKETMENU_MINIMAP_TOOLTIP1 or TRINKETMENU_MINIMAP_TOOLTIP2)
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide()
@@ -86,7 +90,7 @@
 	</Button>
 
 	<Frame name="TrinketMenu_OptFrame" parent="UIParent" movable="true" toplevel="true" clampedToScreen="true" hidden="true">
-		<Size x="300" y="326"/>
+		<Size x="380" y="326"/>
 		<Anchors>
 			<Anchor point="CENTER"/>
 		</Anchors>
@@ -138,13 +142,13 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".375" right=".5" top=".25" bottom=".375"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".5" right=".625" top=".25" bottom=".375"/>
 				</PushedTexture>
-				<DisabledTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<DisabledTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".625" right=".75" top=".25" bottom=".375"/>
 				</DisabledTexture>
 			</Button>
@@ -156,15 +160,15 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".75" right=".875" top=".125" bottom=".25"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".875" right="1" top=".125" bottom=".25"/>
 				</PushedTexture>
 			</Button>
 
-			<Button name="TrinketMenu_Tab1" inherits="TrinketMenu_TabTemplate" text="Options" id="1">
+			<Button name="TrinketMenu_Tab1" inherits="TrinketMenu_TabTemplate" text="TRINKETMENU_OPTIONS" id="1">
 				<Anchors>
 					<Anchor point="TOPRIGHT">
 						<Offset>
@@ -360,7 +364,7 @@
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="TrinketMenu_OptColumnsSliderText" inherits="GameFontHighlightSmall" text="5 trinkets">
+								<FontString name="TrinketMenu_OptColumnsSliderText" inherits="GameFontHighlightSmall" text="TRINKETMENU_5_TRINKETS">
 									<Anchors>
 										<Anchor point="BOTTOM" relativePoint="TOP">
 											<Offset>

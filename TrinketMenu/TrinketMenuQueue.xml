@@ -1,4 +1,6 @@
 <Ui>
+	<Script file="Localization.lua"></Script>
+	<Script file="Localization.ruRU.lua"></Script>
 
 	<Button name="TrinketMenu_ProfilesListTemplate" virtual="true">
 		<Size>
@@ -6,7 +8,7 @@
 		</Size>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<FontString name="$parentName" font="GameFontHighlight" text="Profile name">
+				<FontString name="$parentName" font="GameFontHighlight" text="TRINKETMENU_PROFILENAME">
 					<Anchors>
 						<Anchor point="LEFT">
 							<Offset>
@@ -132,7 +134,7 @@
 		<Size>
 			<AbsDimension x="24" y="24"/>
 		</Size>
-		<HighlightTexture file="Interface\AddOns\TrinketMenu\Buttons" alphaMode="ADD">
+		<HighlightTexture file="Interface\AddOns\TrinketMenu\Images\Buttons" alphaMode="ADD">
 			<TexCoords left=".25" right=".375" top="0" bottom=".125"/>
 		</HighlightTexture>
 		<Scripts>
@@ -148,7 +150,7 @@
 		</Scripts>
 	</Button>
 
-	<Button name="TrinketMenu_Tab2" inherits="TrinketMenu_TabTemplate" parent="TrinketMenu_OptFrame" text="Bottom      " id="2">
+	<Button name="TrinketMenu_Tab2" inherits="TrinketMenu_TabTemplate" parent="TrinketMenu_OptFrame" text="TRINKETMENU_BUTTOM" id="2">
 		<Anchors>
 			<Anchor point="TOPRIGHT" relativeTo="TrinketMenu_Tab1" relativePoint="TOPLEFT"/>
 		</Anchors>
@@ -162,7 +164,7 @@
 			</Anchor>
 		</Anchors>
 	</CheckButton>
-	<Button name="TrinketMenu_Tab3" inherits="TrinketMenu_TabTemplate" parent="TrinketMenu_OptFrame" text="Top      " id="3">
+	<Button name="TrinketMenu_Tab3" inherits="TrinketMenu_TabTemplate" parent="TrinketMenu_OptFrame" text="TRINKETMENU_TOP" id="3">
 		<Anchors>
 			<Anchor point="TOPRIGHT" relativeTo="TrinketMenu_Tab2" relativePoint="TOPLEFT"/>
 		</Anchors>
@@ -226,13 +228,13 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".375" right=".5" top="0" bottom=".125"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".5" right=".625" top="0" bottom=".125"/>
 				</PushedTexture>
-				<DisabledTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<DisabledTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".625" right=".75" top="0" bottom=".125"/>
 				</DisabledTexture>
 			</Button>
@@ -244,13 +246,13 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left="0" right=".125" top=".125" bottom=".25"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".125" right=".25" top=".125" bottom=".25"/>
 				</PushedTexture>
-				<DisabledTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<DisabledTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".25" right=".375" top=".125" bottom=".25"/>
 				</DisabledTexture>
 			</Button>
@@ -262,13 +264,13 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".375" right=".5" top=".125" bottom=".25"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".5" right=".625" top=".125" bottom=".25"/>
 				</PushedTexture>
-				<DisabledTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<DisabledTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".625" right=".75" top=".125" bottom=".25"/>
 				</DisabledTexture>
 			</Button>
@@ -280,13 +282,13 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left="0" right=".125" top=".25" bottom=".375"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".125" right=".25" top=".25" bottom=".375"/>
 				</PushedTexture>
-				<DisabledTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<DisabledTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".25" right=".375" top=".25" bottom=".375"/>
 				</DisabledTexture>
 			</Button>
@@ -298,10 +300,10 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".75" right=".875" top=".25" bottom=".375"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".875" right="1" top=".25" bottom=".375"/>
 				</PushedTexture>
 			</Button>
@@ -313,13 +315,13 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<NormalTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<NormalTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left="0" right=".125" top=".375" bottom=".5"/>
 				</NormalTexture>
-				<PushedTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<PushedTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".125" right=".25" top=".375" bottom=".5"/>
 				</PushedTexture>
-				<DisabledTexture file="Interface\AddOns\TrinketMenu\Buttons">
+				<DisabledTexture file="Interface\AddOns\TrinketMenu\Images\Buttons">
 					<TexCoords left=".25" right=".375" top=".375" bottom=".5"/>
 				</DisabledTexture>
 			</Button>
@@ -331,7 +333,7 @@
 				<Anchors>
 					<Anchor point="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="54" y="8"/>
+							<AbsDimension x="65" y="8"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -370,7 +372,7 @@
 							</Anchors>
 							<TexCoords left="0.09375" right="0.90625" top="0" bottom="1.0"/>
 						</Texture>
-						<FontString font="GameFontHighlightSmall" justifyH="RIGHT" text="Delay">
+						<FontString font="GameFontHighlightSmall" justifyH="RIGHT" text="TRINKETMENU_DELAY">
 							<Anchors>
 								<Anchor point="RIGHT" relativePoint="LEFT">
 									<Offset>
@@ -379,7 +381,7 @@
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString font="GameFontHighlightSmall" justifyH="LEFT" text="sec">
+						<FontString font="GameFontHighlightSmall" justifyH="LEFT" text="TRINKETMENU_SEC">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -429,7 +431,7 @@
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="TrinketMenu_SortPriority" relativePoint="TOPRIGHT">
 						<Offset>
-							<AbsDimension x="40" y="0"/>
+							<AbsDimension x="60" y="0"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -657,7 +659,7 @@
 									</Anchors>
 									<TexCoords left="0.09375" right="0.90625" top="0" bottom="1.0"/>
 								</Texture>
-								<FontString font="GameFontHighlightSmall" text="Profile">
+								<FontString font="GameFontHighlightSmall" text="TRINKETMENU_PROFILE">
 									<Anchors>
 										<Anchor point="RIGHT" relativeTo="$parentLeft" relativePoint="LEFT">
 											<Offset>
@@ -687,7 +689,10 @@
 							</OnTextChanged>
 						</Scripts>
 					</EditBox>
-					<Button name="TrinketMenu_ProfilesDelete" inherits="TrinketMenu_ProfilesButtonTemplate" text="Delete">
+					<Button name="TrinketMenu_ProfilesDelete" inherits="TrinketMenu_ProfilesButtonTemplate" text="TRINKETMENU_DELETE">
+						<Size>
+							<AbsDimension x="64" y="24"/>
+						</Size>
 						<Anchors>
 							<Anchor point="BOTTOMLEFT">
 								<Offset>
@@ -696,7 +701,10 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="TrinketMenu_ProfilesLoad" inherits="TrinketMenu_ProfilesButtonTemplate" text="Load">
+					<Button name="TrinketMenu_ProfilesLoad" inherits="TrinketMenu_ProfilesButtonTemplate" text="TRINKETMENU_LOAD">
+						<Size>
+							<AbsDimension x="64" y="24"/>
+						</Size>
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="TrinketMenu_ProfilesDelete" relativePoint="RIGHT">
 								<Offset>
@@ -705,7 +713,10 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="TrinketMenu_ProfilesSave" inherits="TrinketMenu_ProfilesButtonTemplate" text="Save">
+					<Button name="TrinketMenu_ProfilesSave" inherits="TrinketMenu_ProfilesButtonTemplate" text="TRINKETMENU_SAVE">
+						<Size>
+							<AbsDimension x="64" y="24"/>
+						</Size>
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="TrinketMenu_ProfilesLoad" relativePoint="RIGHT">
 								<Offset>
@@ -714,7 +725,10 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="TrinketMenu_ProfilesCancel" inherits="TrinketMenu_ProfilesButtonTemplate" text="Cancel">
+					<Button name="TrinketMenu_ProfilesCancel" inherits="TrinketMenu_ProfilesButtonTemplate" text="TRINKETMENU_CANCEL">
+						<Size>
+							<AbsDimension x="64" y="24"/>
+						</Size>
 						<Anchors>
 							<Anchor point="LEFT" relativeTo="TrinketMenu_ProfilesSave" relativePoint="RIGHT">
 								<Offset>
